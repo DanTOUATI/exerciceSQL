@@ -11,4 +11,5 @@ Exercice 2
 
 Exercice 3 : 
 
+![image](https://user-images.githubusercontent.com/77622596/204250112-b8b08ace-03aa-4875-b25a-d82a9c5b193c.png)
 
