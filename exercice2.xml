@@ -37,23 +37,23 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="312" y="151" name="boards">
+</datatypes><table x="602" y="223" name="boards">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="title" null="1" autoincrement="0">
+<row name="title" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="description" null="1" autoincrement="0">
+</row>
+<row name="description" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
+</row>
+<row name="updated_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="id_users" null="1" autoincrement="0">
+</row>
+<row name="id_user" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
@@ -61,47 +61,47 @@
 <part>id</part>
 </key>
 </table>
-<table x="611" y="139" name="users">
+<table x="859" y="253" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
+<row name="name" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="email" null="1" autoincrement="0">
+</row>
+<row name="email" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
+</row>
+<row name="updated_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="312" y="434" name="lists">
+<table x="418" y="361" name="lists">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="title" null="1" autoincrement="0">
+<row name="title" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="description" null="1" autoincrement="0">
+</row>
+<row name="description" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
+</row>
+<row name="updated_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="id_boards" null="1" autoincrement="0">
+</row>
+<row name="id_board" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="boards" row="id" />
 </row>
-<row name="id_users" null="1" autoincrement="0">
+<row name="id_user" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
@@ -109,48 +109,52 @@
 <part>id</part>
 </key>
 </table>
-<table x="616" y="404" name="tasks">
+<table x="383" y="600" name="tasks">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="title" null="1" autoincrement="0">
+<row name="title" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="description" null="1" autoincrement="0">
+</row>
+<row name="description" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
+</row>
+<row name="updated_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="id_lists" null="1" autoincrement="0">
+</row>
+<row name="id_list" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="lists" row="id" />
 </row>
+<row name="parent_Id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="tasks" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="911" y="413" name="comments">
+<table x="644" y="682" name="comments">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="content" null="1" autoincrement="0">
+<row name="content" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
+</row>
+<row name="updated_at" null="0" autoincrement="0">
 <datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="id_tasks" null="1" autoincrement="0">
+</row>
+<row name="id_task" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="tasks" row="id" />
 </row>
-<row name="id_users" null="1" autoincrement="0">
+<row name="id_user" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
@@ -158,32 +162,49 @@
 <part>id</part>
 </key>
 </table>
-<table x="900" y="157" name="attachments">
+<table x="661" y="455" name="attachments">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="1" autoincrement="0">
+<row name="name" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="path" null="1" autoincrement="0">
+</row>
+<row name="path" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="created_at" null="1" autoincrement="0">
-<datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="updated_at" null="1" autoincrement="0">
-<datatype>DATETIME</datatype>
-<default>NULL</default></row>
-<row name="id_tasks" null="1" autoincrement="0">
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="id_task" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="tasks" row="id" />
 </row>
-<row name="id_users" null="1" autoincrement="0">
+<row name="id_user" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="899" y="599" name="attributionTaches">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="id_user" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="id_task" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="tasks" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
 </sql>
+
